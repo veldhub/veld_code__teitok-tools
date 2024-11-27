@@ -1,0 +1,21 @@
+x-veld:
+  code:
+
+services:
+  parseudpipe:
+    build: .
+    volumes:
+      - ./:/veld/code/
+    command: ./veld_parseudpipe.sh
+    environment:
+      in_xml_file: null
+      out_xml_file: null
+      writeback: null
+      model: null
+      lang: null
+      token: null
+      tokxp: null
+      sent: null
+      sentxp: null
+      atts: null
+

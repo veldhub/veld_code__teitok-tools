@@ -1,0 +1,10 @@
+x-veld:
+  code:
+
+services:
+  xmltokenize:
+    build: .
+    volumes:
+      - ./:/veld/code/
+    command: ./veld_xmltokenize.sh
+
