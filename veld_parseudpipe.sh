@@ -2,11 +2,7 @@
 
 cp /veld/input/"$in_xml_file" /veld/output/"$out_xml_file"
 
-command="perl Scripts/parseudpipe.pl /veld/output/${out_xml_file}"
-
-if [ "$writeback" = "true" ]; then
-  command+=" --writeback"
-fi
+command="perl Scripts/parseudpipe.pl /veld/output/${out_xml_file} --writeback"
 
 if [ -n "$model" ]; then
   command+=" --model=${model}"

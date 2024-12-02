@@ -1,5 +1,37 @@
 x-veld:
   code:
+    description: "This code veld encapsulates and veldifies the udpipe2teitok script. All its 
+      settings here are passed down to the script. For more information on its usage and settings, 
+      see: https://github.com/ufal/teitok-tools?tab=readme-ov-file#udpipe2teitok"
+    topics:
+      - NLP
+      - ETL
+      - tokenization
+      - universal dependencies
+
+    inputs:
+      - volume: /veld/input/
+        file_type: txt
+
+    outputs:
+      - volume: /veld/output/
+        file_type: xml
+
+    settings:
+      - environment: model
+        description: "the UDPIPE model to be used (which has to be available in the REST API)"
+        env_type: str
+        optional: true
+      - environment: lang
+        description: "An indication of the language (either an ISO code or a name) in case no model
+          is provided."
+        env_type: str
+        optional: true
+      - environment: mixed
+        description: "mixed language corpus - use CWALI to detect the language of each file."
+        env_type: bool
+        default: false
+        optional: true
 
 services:
   udpipe2teitok:
@@ -7,4 +39,8 @@ services:
     volumes:
       - ./:/veld/code/
     command: ./veld_udpipe2teitok.sh
+    environment:
+      lang: null
+      model: null
+      mixed: false
 

@@ -1,5 +1,53 @@
 x-veld:
   code:
+    description: "This code veld encapsulates and veldifies the parseudpipe script. All its 
+      settings here are passed down to the script. For more information on its usage and settings, 
+      see: https://github.com/ufal/teitok-tools?tab=readme-ov-file#parseudpipe"
+    topics:
+      - NLP
+      - ETL
+      - tokenization
+      - universal dependencies
+
+    inputs:
+      - volume: /veld/input/
+        file_type: xml
+        environment: in_xml_file
+
+    outputs:
+      - volume: /veld/output/
+        file_type: xml
+        environment: out_xml_file
+
+    settings:
+      - environment:  model
+        description: "which UDPIPE model to use"
+        env_type: str
+        optional: true
+      - environment: lang
+        description: "language of the texts (if no model is provided)"
+        env_type: str
+        optional: true
+      - environment: token
+        description: "token node"
+        env_type: str
+        optional: true
+      - environment: tokxp
+        description: "token XPath"
+        env_type: str
+        optional: true
+      - environment: sent
+        description: "sentence node"
+        env_type: str
+        optional: true
+      - environment: sentxp
+        description: "sentence XPath"
+        env_type: str
+        optional: true
+      - environment: atts
+        description: "attributes to use for the word form"
+        env_type: str
+        optional: true
 
 services:
   parseudpipe:
@@ -10,7 +58,6 @@ services:
     environment:
       in_xml_file: null
       out_xml_file: null
-      writeback: null
       model: null
       lang: null
       token: null

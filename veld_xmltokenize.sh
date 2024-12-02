@@ -2,19 +2,30 @@
 
 cp /veld/input/"$in_xml_file" /veld/output/"$out_xml_file"
 
-if [ "$enumerate" = "true" ]; then
-  enumerate_flag="--enumerate"
-else
-  enumerate_flag=""
+command="perl Scripts/xmltokenize.pl --filename=/veld/output/${out_xml_file}"
+
+if [ -n "$textnode" ]; then
+  command+=" --textnode=${textnode}"
 fi
 
-perl Scripts/xmltokenize.pl \
-  --filename=/veld/output/"$out_xml_file" \
-  --textnode="$textnode" \
-  --tok="$tok" \
-  "$enumerate_flag" \
-  --segment="$segment"
+if [ -n "$tok" ]; then
+  command+=" --tok=${tok}"
+fi
 
 # TODO: add option, once upstream bug is fixed
-  #--exclude="$exclude" \
+#if [ -n "$exclude" ]; then
+#  command+=" --exclude=${exclude}"
+#fi
+
+if [ "$enumerate" = "true" ]; then
+  command+=" --enumerate"
+fi
+
+if [ -n "$segment" ]; then
+  command+=" --segment=${segment}"
+fi
+
+echo "executing:"
+echo "$command"
+eval "$command"
 
