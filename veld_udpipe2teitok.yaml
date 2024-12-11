@@ -34,7 +34,7 @@ x-veld:
         optional: true
 
 services:
-  udpipe2teitok:
+  veld_udpipe2teitok:
     build: .
     volumes:
       - ./:/veld/code/

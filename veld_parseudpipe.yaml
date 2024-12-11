@@ -50,7 +50,7 @@ x-veld:
         optional: true
 
 services:
-  parseudpipe:
+  veld_parseudpipe:
     build: .
     volumes:
       - ./:/veld/code/
