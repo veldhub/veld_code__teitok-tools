@@ -1,42 +1,42 @@
 x-veld:
   code:
     description: "This code veld encapsulates and veldifies the xmltokenize script. All its 
-      settings here are passed down to the script. For more information on its usage and settings, 
+      config here are passed down to the script. For more information on its usage and config, 
       see: https://github.com/ufal/teitok-tools?tab=readme-ov-file#xmltokenize"
-    topics:
+    topic:
       - NLP
       - ETL
       - tokenization
       - universal dependencies
 
-    inputs:
+    input:
       - volume: /veld/input/
         file_type: xml
-        environment: in_xml_file
+        environment_var: in_xml_file
         description: "The xml file to be tokenized"
 
-    outputs:
+    output:
       - volume: /veld/output/
         file_type: xml
-        environment: out_xml_file
+        environment_var: out_xml_file
         description: "The output tokenized xml"
 
-    settings:
-      - environment:  textnode
+    config:
+      - environment_var:  textnode
         description: "what to use as the text body to tokenize"
-        env_type: str
-      - environment: exclude
+        var_type: str
+      - environment_var: exclude
         description: "elements not to tokenize"
-        env_type: str
+        var_type: str
         optional: true
-      - environment: enumerate
+      - environment_var: enumerate
         description: "provide a unique ID to each token"
-        env_type: bool
+        var_type: bool
         default: false
         optional: true
-      - environment: segment
+      - environment_var: segment
         description: "split into sentences (1=yes, 2=only) - only for TEI files"
-        env_type: int
+        var_type: int
         optional: true
 
 services:
