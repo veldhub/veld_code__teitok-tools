@@ -6,8 +6,8 @@ x-veld:
     topic:
       - NLP
       - ETL
-      - tokenization
-      - universal dependencies
+      - Tokenization
+      - Universal Dependencies
 
     input:
       - volume: /veld/input/
