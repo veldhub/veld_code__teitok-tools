@@ -5,17 +5,20 @@ x-veld:
       see: https://github.com/ufal/teitok-tools?tab=readme-ov-file#udpipe2teitok"
     topic:
       - NLP
-      - ETL
-      - Tokenization
+      - Grammatical Annotation
       - Universal Dependencies
+      - Tokenization
+      - Lemmatization
+      - Part Of Speech
+      - Dependency Parsing
 
     input:
-      - volume: /veld/input/
-        file_type: txt
+      volume: /veld/input/
+      file_type: txt
 
     output:
-      - volume: /veld/output/
-        file_type: xml
+      volume: /veld/output/
+      file_type: xml
 
     config:
       - environment_var: model
