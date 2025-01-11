@@ -4,7 +4,8 @@
 
 This repo is a fork of https://github.com/ufal/teitok-tools . All the code is identical to the 
 source repo, except for veldified wrappers of the scripts which have been added. They are 
-exemplified in this chain repo: https://github.com/SteffRhes/veld_chain_demo_teitok-tools
+exemplified in this chain repo: https://github.com/veldhub/veld_chain__demo_teitok-tools/ and 
+https://github.com/veldhub/veld_chain__automatic_tei-ification_of_gutenberg
 
 ## requirements
 
