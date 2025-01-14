@@ -28,16 +28,25 @@ docker compose -f <VELD_NAME>.yaml up
 ## contained code velds
 
 **[./veld_udpipe2teitok.yaml](./veld_udpipe2teitok.yaml)**
+
+veldified encapsulation of [udpipe2teitok](#udpipe2teitok)
+
 ```
 docker compose -f veld_udpipe2teitok.yaml up
 ```
 
 **[./veld_xmltokenize.yaml](./veld_xmltokenize.yaml)**
+
+veldified encapsulation of [xmltokenize](#xmltokenize)
+
 ```
 docker compose -f veld_xmltokenize.yaml up
 ```
 
 **[./veld_parseudpipe.yaml](./veld_parseudpipe.yaml)**
+
+veldified encapsulation of [parseudpipe](#parseudpipe)
+
 ```
 docker compose -f veld_parseudpipe.yaml up
 ```
