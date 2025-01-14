@@ -3,23 +3,44 @@
 ## note on veldification
 
 This repo is a fork of https://github.com/ufal/teitok-tools . All the code is identical to the 
-source repo, except for veldified wrappers of the scripts which have been added. They are 
-exemplified in this chain repo: https://github.com/veldhub/veld_chain__demo_teitok-tools/ and 
+source repo, except for [veldified wrappers](https://zenodo.org/records/13322913) of the scripts 
+which have been added. They are exemplified in this chain repo:
+https://github.com/veldhub/veld_chain__demo_teitok-tools/ and
 https://github.com/veldhub/veld_chain__automatic_tei-ification_of_gutenberg
 
 ## requirements
 
 - git
-- docker compose
+- docker compose (note: older docker compose versions require running `docker-compose` instead of 
+  `docker compose`)
 
 ## how to use
 
-This repo contains the following code velds, which can be integrated into chain velds or used on 
-their own. For details see these respective veld yaml files:
+A code veld may be integrated into a chain veld, or used directly by adapting the configuration 
+within its yaml file and using the template folders provided in this repo. Open the respective veld 
+yaml file for more information.
 
-- [./veld_udpipe2teitok.yaml](./veld_udpipe2teitok.yaml)
-- [./veld_xmltokenize.yaml](./veld_xmltokenize.yaml)
-- [./veld_parseudpipe.yaml](./veld_parseudpipe.yaml)
+Run a veld with:
+```
+docker compose -f <VELD_NAME>.yaml up
+```
+
+## contained code velds
+
+**[./veld_udpipe2teitok.yaml](./veld_udpipe2teitok.yaml)**
+```
+docker compose -f veld_udpipe2teitok.yaml up
+```
+
+**[./veld_xmltokenize.yaml](./veld_xmltokenize.yaml)**
+```
+docker compose -f veld_xmltokenize.yaml up
+```
+
+**[./veld_parseudpipe.yaml](./veld_parseudpipe.yaml)**
+```
+docker compose -f veld_parseudpipe.yaml up
+```
 
 # original teitok-tools README from here
 
