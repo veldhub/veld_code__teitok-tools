@@ -1,4 +1,4 @@
-# teitok-tools (veldified)
+# ![veld chain](https://raw.githubusercontent.com/veldhub/.github/refs/heads/main/images/symbol_V_letter.png) teitok-tools (veldified)
 
 ## note on veldification
 
