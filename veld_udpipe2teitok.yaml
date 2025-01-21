@@ -41,7 +41,7 @@ services:
     build: .
     volumes:
       - ./:/veld/code/
-    command: ./veld_udpipe2teitok.sh
+    command: sh ./veld_udpipe2teitok.sh
     environment:
       lang: null
       model: null
