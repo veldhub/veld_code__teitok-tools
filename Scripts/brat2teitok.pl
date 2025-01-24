@@ -3,14 +3,15 @@ use utf8;
 use Getopt::Long;
 use XML::LibXML;
 
-# Script to convert an EXMARaLDA text into TEITOK/XML
+# Script to convert an BRAT annotated file (txt + ann) into TEITOK/XML
+# Brat (https://brat.nlplab.org/) is a tool to create stand-off annotations
 
- GetOptions ( ## Command line options
+GetOptions ( ## Command line options
             'debug' => \$debug, # debugging mode
             'verbose' => \$verbose, # debugging mode
             'keeppunct' => \$keeppunct, # keep punctuation marks inside the token
             'makesent' => \$makesent, # interpret new lines as sentence boundaries
-            'makepar' => \$makepar, # interpret new lines as sentence boundaries
+            'makepar' => \$makepar, # interpret double new lines as paragraph boundaries
             'file=s' => \$filename, # language of input
             'plain=s' => \$plainfile, # location of the plain text file
             'morerev=s' => \$morerev, # more revision statement
@@ -28,7 +29,7 @@ if ( !-e $filename ) { print "Error: annotation file not found - $filename"; };
 if ( !$plainfile ) { ( $plainfile = $filename ) =~ s/\.ann$/.txt/; };
 if ( !$outfile ) { ( $outfile = $filename ) =~ s/\.ann$/.xml/; };
 
-if ( !-e $plainfile ) { sleep 5; };
+if ( !-e $plainfile ) { sleep 5; }; # Wait for conversion if input is not plain text (not used for BRAT)
 if ( !-e $plainfile ) { print "Error: text file not found - $plainfile"; };
 
 $/ = undef;

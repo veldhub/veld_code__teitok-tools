@@ -1,12 +1,57 @@
-# teitok-tools (veldified)
+# ![veld chain](https://raw.githubusercontent.com/veldhub/.github/refs/heads/main/images/symbol_V_letter.png) teitok-tools (veldified)
 
-### note on veldification
+## note on veldification
 
 This repo is a fork of https://github.com/ufal/teitok-tools . All the code is identical to the 
-source repo, except for veldified wrappers of the scripts which have been added. They are 
-exemplified in this chain repo: https://github.com/SteffRhes/veld_chain_demo_teitok-tools
+source repo, except for [veldified wrappers](https://zenodo.org/records/13322913) of the scripts 
+which have been added. They are exemplified in this chain repo:
+https://github.com/veldhub/veld_chain__demo_teitok-tools/ and
+https://github.com/veldhub/veld_chain__automatic_tei-ification_of_gutenberg
 
-# original 
+## requirements
+
+- git
+- docker compose (note: older docker compose versions require running `docker-compose` instead of 
+  `docker compose`)
+
+## how to use
+
+A code veld may be integrated into a chain veld, or used directly by adapting the configuration 
+within its yaml file and using the template folders provided in this repo. Open the respective veld 
+yaml file for more information.
+
+Run a veld with:
+```
+docker compose -f <VELD_NAME>.yaml up
+```
+
+## contained code velds
+
+**[./veld_udpipe2teitok.yaml](./veld_udpipe2teitok.yaml)**
+
+veldified encapsulation of [udpipe2teitok](#udpipe2teitok)
+
+```
+docker compose -f veld_udpipe2teitok.yaml up
+```
+
+**[./veld_xmltokenize.yaml](./veld_xmltokenize.yaml)**
+
+veldified encapsulation of [xmltokenize](#xmltokenize)
+
+```
+docker compose -f veld_xmltokenize.yaml up
+```
+
+**[./veld_parseudpipe.yaml](./veld_parseudpipe.yaml)**
+
+veldified encapsulation of [parseudpipe](#parseudpipe)
+
+```
+docker compose -f veld_parseudpipe.yaml up
+```
+
+# original teitok-tools README from here
 
 Conversion tools to, from, and related to the tokenized TEI/XML format. 
 These scripts can be used independently from the [TEITOK](http://www.teitok.org) platform, even though they

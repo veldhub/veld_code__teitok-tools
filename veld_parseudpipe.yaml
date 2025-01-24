@@ -1,52 +1,52 @@
 x-veld:
   code:
     description: "This code veld encapsulates and veldifies the parseudpipe script. All its 
-      settings here are passed down to the script. For more information on its usage and settings, 
+      config here are passed down to the script. For more information on its usage and config, 
       see: https://github.com/ufal/teitok-tools?tab=readme-ov-file#parseudpipe"
-    topics:
+    topic:
       - NLP
       - ETL
-      - tokenization
-      - universal dependencies
+      - Tokenization
+      - Universal Dependencies
 
-    inputs:
+    input:
       - volume: /veld/input/
         file_type: xml
-        environment: in_xml_file
+        environment_var: in_xml_file
 
-    outputs:
+    output:
       - volume: /veld/output/
         file_type: xml
-        environment: out_xml_file
+        environment_var: out_xml_file
 
-    settings:
-      - environment:  model
+    config:
+      - environment_var:  model
         description: "which UDPIPE model to use"
-        env_type: str
+        var_type: str
         optional: true
-      - environment: lang
+      - environment_var: lang
         description: "language of the texts (if no model is provided)"
-        env_type: str
+        var_type: str
         optional: true
-      - environment: token
+      - environment_var: token
         description: "token node"
-        env_type: str
+        var_type: str
         optional: true
-      - environment: tokxp
+      - environment_var: tokxp
         description: "token XPath"
-        env_type: str
+        var_type: str
         optional: true
-      - environment: sent
+      - environment_var: sent
         description: "sentence node"
-        env_type: str
+        var_type: str
         optional: true
-      - environment: sentxp
+      - environment_var: sentxp
         description: "sentence XPath"
-        env_type: str
+        var_type: str
         optional: true
-      - environment: atts
+      - environment_var: atts
         description: "attributes to use for the word form"
-        env_type: str
+        var_type: str
         optional: true
 
 services:
@@ -54,7 +54,7 @@ services:
     build: .
     volumes:
       - ./:/veld/code/
-    command: ./veld_parseudpipe.sh
+    command: bash ./veld_parseudpipe.sh
     environment:
       in_xml_file: null
       out_xml_file: null
