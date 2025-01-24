@@ -1,0 +1,9 @@
+
+services:
+  udpipe2teitok_bug_reproduction:
+    build: .
+    command: perl /app/Scripts/udpipe2teitok.pl --orgfolder=data/in/ --model=german-hdt-ud-2.6-200830
+    volumes:
+      - ./:/app/
+    working_dir: /app
+
