@@ -44,7 +44,7 @@ services:
     build: .
     volumes:
       - ./:/veld/code/
-    command: bash ./veld_xmltokenize.sh
+    command: bash /veld/code/veld_xmltokenize.sh
     environment:
       in_xml_file: null
       out_xml_file: null
