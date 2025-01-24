@@ -6,7 +6,7 @@ touch udpipeDEU_001.xml
 touch udpipeDEU_002.conllu
 touch udpipeDEU_002.xml
 
-command="perl Scripts/udpipe2teitok.pl --orgfolder=/veld/input/"
+command="perl /veld/code/Scripts/udpipe2teitok.pl --orgfolder=/veld/input/"
 
 if [ -n "$lang" ]; then
   command+=" --lang=${lang}"
