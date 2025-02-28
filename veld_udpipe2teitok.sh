@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# TODO: remove hard-wired work-around, once bug is fixed
-touch udpipeDEU_001.conllu
-touch udpipeDEU_001.xml
-touch udpipeDEU_002.conllu
-touch udpipeDEU_002.xml
-
-command="perl /veld/code/Scripts/udpipe2teitok.pl --orgfolder=/veld/input/"
+command="perl /veld/code/Scripts/udpipe2teitok.pl --tmpfolder=/tmp/ --orgfolder=/veld/input/ --outfolder=/veld/output/"
 
 if [ -n "$lang" ]; then
   command+=" --lang=${lang}"
@@ -23,10 +17,4 @@ fi
 echo "executing:"
 echo "$command"
 eval "$command"
-
-# TODO: remove hard-wired work-around, once bug is fixed
-mv udpipeDEU_001.conllu /veld/output/
-mv udpipeDEU_001.xml /veld/output/
-mv udpipeDEU_002.conllu /veld/output/
-mv udpipeDEU_002.xml /veld/output/
 
