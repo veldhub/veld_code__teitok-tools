@@ -2,7 +2,7 @@
 
 cp /veld/input/"$in_xml_file" /veld/output/"$out_xml_file"
 
-command="perl Scripts/xmltokenize.pl --filename=/veld/output/${out_xml_file}"
+command="perl /veld/code/Scripts/xmltokenize.pl --filename=/veld/output/${out_xml_file}"
 
 if [ -n "$textnode" ]; then
   command+=" --textnode=${textnode}"
